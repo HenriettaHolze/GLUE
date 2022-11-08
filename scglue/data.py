@@ -549,7 +549,7 @@ def get_metacells(
     adatas = [
         AnnData(
             X=adata.X,
-            obs=adata.obs.set_index(adata.obs_names + f"-{i}"), var=adata.var,
+            obs=adata.obs, var=adata.var,
             obsm=adata.obsm, varm=adata.varm, layers=adata.layers,
             dtype=None if adata.X is None else adata.X.dtype
         ) for i, adata in enumerate(adatas)
